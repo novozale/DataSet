@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SWService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="MyService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SalesmanWorkplaceService" />
+      <xsd:import schemaLocation="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SWIService_GetCPList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CheckPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPass" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CheckPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetFullName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFullName" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetFullName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSalesmanCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesmanCode" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSalesmanCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesmanCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSalesmanList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesmanList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSalesmanList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesmanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CopyCP_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyCP" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CopyCP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyCPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_DeleteCP_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCP" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_DeleteCP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetWHList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWHList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetWHList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWHListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetDocCodesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocCodesList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetDocCodesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocCodesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCurrencyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCurrencyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetPriceConditionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceConditionList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetPriceConditionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceConditionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetPartialDeliveryVariantsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartialDeliveryVariantsList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetPartialDeliveryVariantsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartialDeliveryVariantsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPNewNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPNewNumber" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPNewNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPNewNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPHeader" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCustomerColumns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerColumns" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCustomerColumns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCustomerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCustomerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPToPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPToPrint" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPToPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPToPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CPHasStrings_InputMessage">
+    <wsdl:part name="parameters" element="tns:CPHasStrings" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CPHasStrings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CPHasStringsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CheckCPData_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCPData" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_CheckCPData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCPDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_AddOrderHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderHeader" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_AddOrderHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetProductColumns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductColumns" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetProductColumns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPProductList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetWH_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWH" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetWH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWHResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPTotal" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetMarginLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarginLevels" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetMarginLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarginLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ReCalcCP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReCalcCP" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ReCalcCP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReCalcCPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_IncreaseCPPerCent_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseCPPerCent" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_IncreaseCPPerCent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseCPPerCentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSupplierColumns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierColumns" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSupplierColumns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSupplierList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetSupplierList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_DelOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelOrder" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_DelOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_SetCPDelCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCPDelCost" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_SetCPDelCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCPDelCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetAltProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAltProductList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetAltProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAltProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemDetailList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDetailList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemDetailList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDetailListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDetail" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemBatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemBatches" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemBatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemBatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetOrderList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetOrderList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetOrderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetOrderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetUOMList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUOMList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetUOMList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUOMListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemEdit" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_SetCPDelTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCPDelTime" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_SetCPDelTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCPDelTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_EditOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditOrder" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_EditOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetNewStrNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewStrNum" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetNewStrNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewStrNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemSupp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemSupp" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetItemSupp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemSuppResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPToExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPToExcel" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetCPToExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCPToExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ItemInScalaExistOrNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ItemInScalaExistOrNo" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ItemInScalaExistOrNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ItemInScalaExistOrNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ItemSuppInScalaExistOrNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ItemSuppInScalaExistOrNo" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ItemSuppInScalaExistOrNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ItemSuppInScalaExistOrNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetScalaSICtItemList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalaSICtItemList" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetScalaSICtItemList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalaSICtItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ImportRow_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportRow" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_ImportRow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetScalaCodeBySuppCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalaCodeBySuppCode" />
+  </wsdl:message>
+  <wsdl:message name="SWIService_GetScalaCodeBySuppCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalaCodeBySuppCodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SWIService">
+    <wsdl:operation name="GetCPList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPList" message="tns:SWIService_GetCPList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPListResponse" message="tns:SWIService_GetCPList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/CheckPass" message="tns:SWIService_CheckPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/CheckPassResponse" message="tns:SWIService_CheckPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullName">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetFullName" message="tns:SWIService_GetFullName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetFullNameResponse" message="tns:SWIService_GetFullName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesmanCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetSalesmanCode" message="tns:SWIService_GetSalesmanCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetSalesmanCodeResponse" message="tns:SWIService_GetSalesmanCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesmanList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetSalesmanList" message="tns:SWIService_GetSalesmanList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetSalesmanListResponse" message="tns:SWIService_GetSalesmanList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyCP">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/CopyCP" message="tns:SWIService_CopyCP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/CopyCPResponse" message="tns:SWIService_CopyCP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCP">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/DeleteCP" message="tns:SWIService_DeleteCP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/DeleteCPResponse" message="tns:SWIService_DeleteCP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWHList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetWHList" message="tns:SWIService_GetWHList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetWHListResponse" message="tns:SWIService_GetWHList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocCodesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetDocCodesList" message="tns:SWIService_GetDocCodesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetDocCodesListResponse" message="tns:SWIService_GetDocCodesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCurrencyList" message="tns:SWIService_GetCurrencyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCurrencyListResponse" message="tns:SWIService_GetCurrencyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceConditionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetPriceConditionList" message="tns:SWIService_GetPriceConditionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetPriceConditionListResponse" message="tns:SWIService_GetPriceConditionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialDeliveryVariantsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetPartialDeliveryVariantsList" message="tns:SWIService_GetPartialDeliveryVariantsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetPartialDeliveryVariantsListResponse" message="tns:SWIService_GetPartialDeliveryVariantsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPNewNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPNewNumber" message="tns:SWIService_GetCPNewNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPNewNumberResponse" message="tns:SWIService_GetCPNewNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPHeader" message="tns:SWIService_GetCPHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPHeaderResponse" message="tns:SWIService_GetCPHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerColumns">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCustomerColumns" message="tns:SWIService_GetCustomerColumns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCustomerColumnsResponse" message="tns:SWIService_GetCustomerColumns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCustomerList" message="tns:SWIService_GetCustomerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCustomerListResponse" message="tns:SWIService_GetCustomerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPToPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPToPrint" message="tns:SWIService_GetCPToPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPToPrintResponse" message="tns:SWIService_GetCPToPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CPHasStrings">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/CPHasStrings" message="tns:SWIService_CPHasStrings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/CPHasStringsResponse" message="tns:SWIService_CPHasStrings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCPData">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/CheckCPData" message="tns:SWIService_CheckCPData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/CheckCPDataResponse" message="tns:SWIService_CheckCPData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/AddOrderHeader" message="tns:SWIService_AddOrderHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/AddOrderHeaderResponse" message="tns:SWIService_AddOrderHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductColumns">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetProductColumns" message="tns:SWIService_GetProductColumns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetProductColumnsResponse" message="tns:SWIService_GetProductColumns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCategories" message="tns:SWIService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCategoriesResponse" message="tns:SWIService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetProductList" message="tns:SWIService_GetProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetProductListResponse" message="tns:SWIService_GetProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPProductList" message="tns:SWIService_GetCPProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPProductListResponse" message="tns:SWIService_GetCPProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWH">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetWH" message="tns:SWIService_GetWH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetWHResponse" message="tns:SWIService_GetWH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPTotal" message="tns:SWIService_GetCPTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPTotalResponse" message="tns:SWIService_GetCPTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarginLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetMarginLevels" message="tns:SWIService_GetMarginLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetMarginLevelsResponse" message="tns:SWIService_GetMarginLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReCalcCP">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/ReCalcCP" message="tns:SWIService_ReCalcCP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/ReCalcCPResponse" message="tns:SWIService_ReCalcCP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseCPPerCent">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/IncreaseCPPerCent" message="tns:SWIService_IncreaseCPPerCent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/IncreaseCPPerCentResponse" message="tns:SWIService_IncreaseCPPerCent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierColumns">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetSupplierColumns" message="tns:SWIService_GetSupplierColumns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetSupplierColumnsResponse" message="tns:SWIService_GetSupplierColumns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetSupplierList" message="tns:SWIService_GetSupplierList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetSupplierListResponse" message="tns:SWIService_GetSupplierList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/DelOrder" message="tns:SWIService_DelOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/DelOrderResponse" message="tns:SWIService_DelOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCPDelCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/SetCPDelCost" message="tns:SWIService_SetCPDelCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/SetCPDelCostResponse" message="tns:SWIService_SetCPDelCost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAltProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetAltProductList" message="tns:SWIService_GetAltProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetAltProductListResponse" message="tns:SWIService_GetAltProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDetailList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetItemDetailList" message="tns:SWIService_GetItemDetailList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetItemDetailListResponse" message="tns:SWIService_GetItemDetailList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetItemDetail" message="tns:SWIService_GetItemDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetItemDetailResponse" message="tns:SWIService_GetItemDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemBatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetItemBatches" message="tns:SWIService_GetItemBatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetItemBatchesResponse" message="tns:SWIService_GetItemBatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetOrderList" message="tns:SWIService_GetOrderList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetOrderListResponse" message="tns:SWIService_GetOrderList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetOrderDetails" message="tns:SWIService_GetOrderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetOrderDetailsResponse" message="tns:SWIService_GetOrderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUOMList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetUOMList" message="tns:SWIService_GetUOMList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetUOMListResponse" message="tns:SWIService_GetUOMList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetItemEdit" message="tns:SWIService_GetItemEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetItemEditResponse" message="tns:SWIService_GetItemEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCPDelTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/SetCPDelTime" message="tns:SWIService_SetCPDelTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/SetCPDelTimeResponse" message="tns:SWIService_SetCPDelTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/EditOrder" message="tns:SWIService_EditOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/EditOrderResponse" message="tns:SWIService_EditOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetItem" message="tns:SWIService_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetItemResponse" message="tns:SWIService_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewStrNum">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetNewStrNum" message="tns:SWIService_GetNewStrNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetNewStrNumResponse" message="tns:SWIService_GetNewStrNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemSupp">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetItemSupp" message="tns:SWIService_GetItemSupp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetItemSuppResponse" message="tns:SWIService_GetItemSupp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/AddOrder" message="tns:SWIService_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/AddOrderResponse" message="tns:SWIService_AddOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPToExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetCPToExcel" message="tns:SWIService_GetCPToExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetCPToExcelResponse" message="tns:SWIService_GetCPToExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemInScalaExistOrNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/ItemInScalaExistOrNo" message="tns:SWIService_ItemInScalaExistOrNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/ItemInScalaExistOrNoResponse" message="tns:SWIService_ItemInScalaExistOrNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemSuppInScalaExistOrNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/ItemSuppInScalaExistOrNo" message="tns:SWIService_ItemSuppInScalaExistOrNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/ItemSuppInScalaExistOrNoResponse" message="tns:SWIService_ItemSuppInScalaExistOrNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScalaSICtItemList">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetScalaSICtItemList" message="tns:SWIService_GetScalaSICtItemList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetScalaSICtItemListResponse" message="tns:SWIService_GetScalaSICtItemList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportRow">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/ImportRow" message="tns:SWIService_ImportRow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/ImportRowResponse" message="tns:SWIService_ImportRow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScalaCodeBySuppCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/SWIService/GetScalaCodeBySuppCode" message="tns:SWIService_GetScalaCodeBySuppCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SWIService/GetScalaCodeBySuppCodeResponse" message="tns:SWIService_GetScalaCodeBySuppCode_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyService" type="tns:SWIService">
+    <wsp:PolicyReference URI="#MyService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCPList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPass">
+      <soap:operation soapAction="http://tempuri.org/SWIService/CheckPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullName">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesmanCode">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetSalesmanCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesmanList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetSalesmanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyCP">
+      <soap:operation soapAction="http://tempuri.org/SWIService/CopyCP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCP">
+      <soap:operation soapAction="http://tempuri.org/SWIService/DeleteCP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWHList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetWHList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocCodesList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetDocCodesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCurrencyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceConditionList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetPriceConditionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialDeliveryVariantsList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetPartialDeliveryVariantsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPNewNumber">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPNewNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPHeader">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerColumns">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCustomerColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCustomerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPToPrint">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPToPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPHasStrings">
+      <soap:operation soapAction="http://tempuri.org/SWIService/CPHasStrings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCPData">
+      <soap:operation soapAction="http://tempuri.org/SWIService/CheckCPData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderHeader">
+      <soap:operation soapAction="http://tempuri.org/SWIService/AddOrderHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductColumns">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetProductColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPProductList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWH">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetWH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPTotal">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarginLevels">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetMarginLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReCalcCP">
+      <soap:operation soapAction="http://tempuri.org/SWIService/ReCalcCP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseCPPerCent">
+      <soap:operation soapAction="http://tempuri.org/SWIService/IncreaseCPPerCent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierColumns">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetSupplierColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetSupplierList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOrder">
+      <soap:operation soapAction="http://tempuri.org/SWIService/DelOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCPDelCost">
+      <soap:operation soapAction="http://tempuri.org/SWIService/SetCPDelCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAltProductList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetAltProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDetailList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetItemDetailList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDetail">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemBatches">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetItemBatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUOMList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetUOMList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemEdit">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetItemEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCPDelTime">
+      <soap:operation soapAction="http://tempuri.org/SWIService/SetCPDelTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditOrder">
+      <soap:operation soapAction="http://tempuri.org/SWIService/EditOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewStrNum">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetNewStrNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemSupp">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetItemSupp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/SWIService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPToExcel">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetCPToExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemInScalaExistOrNo">
+      <soap:operation soapAction="http://tempuri.org/SWIService/ItemInScalaExistOrNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemSuppInScalaExistOrNo">
+      <soap:operation soapAction="http://tempuri.org/SWIService/ItemSuppInScalaExistOrNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScalaSICtItemList">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetScalaSICtItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportRow">
+      <soap:operation soapAction="http://tempuri.org/SWIService/ImportRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScalaCodeBySuppCode">
+      <soap:operation soapAction="http://tempuri.org/SWIService/GetScalaCodeBySuppCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWService">
+    <wsdl:port name="MyService" binding="tns:MyService">
+      <soap:address location="http://spbadm4.eskru.local:8089/SWService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

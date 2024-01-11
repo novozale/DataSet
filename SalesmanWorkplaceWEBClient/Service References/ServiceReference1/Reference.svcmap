@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f49d6c73-3aa3-4946-982c-2d914fad6c5e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://spbadm4:8089/SWService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SWService.disco" MetadataType="Disco" ID="15668b08-0d35-40da-b0cd-df74d3333985" SourceId="1" SourceUrl="http://spbadm4.eskru.local:8089/SWService.svc?disco" />
+    <MetadataFile FileName="SWService.wsdl" MetadataType="Wsdl" ID="cfca2048-14d6-47b6-8c17-3d66372e6cc7" SourceId="1" SourceUrl="http://spbadm4.eskru.local:8089/SWService.svc?wsdl" />
+    <MetadataFile FileName="SWService.xsd" MetadataType="Schema" ID="42e8fd80-5687-4b8c-a0d9-76ca1468f67b" SourceId="1" SourceUrl="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SWService1.xsd" MetadataType="Schema" ID="fcc03f0f-3e24-404a-aab9-3fb917be85ed" SourceId="1" SourceUrl="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SWService2.xsd" MetadataType="Schema" ID="17e29248-a146-4e2c-9404-267698516b38" SourceId="1" SourceUrl="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SWService3.xsd" MetadataType="Schema" ID="3edc5805-e4de-4e9d-9b02-463699e1c452" SourceId="1" SourceUrl="http://spbadm4.eskru.local:8089/SWService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

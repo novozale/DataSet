@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SalesmanWorkplaceService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SalesmanWorkplaceService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SWIService.GetCPListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyAgentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyFinishDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOrderFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+      <xs:element minOccurs="0" name="MySalesmanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStartDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPListParameters" nillable="true" type="tns:SWIService.GetCPListParameters" />
+  <xs:complexType name="SWIService.CheckPassParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPass" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.CheckPassParameters" nillable="true" type="tns:SWIService.CheckPassParameters" />
+  <xs:complexType name="SWIService.GetFullNameParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetFullNameParameters" nillable="true" type="tns:SWIService.GetFullNameParameters" />
+  <xs:complexType name="SWIService.GetSalesmanCodeParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyFullName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetSalesmanCodeParameters" nillable="true" type="tns:SWIService.GetSalesmanCodeParameters" />
+  <xs:complexType name="SWIService.GetSalesmanListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyAllSalesmanFlag" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetSalesmanListParameters" nillable="true" type="tns:SWIService.GetSalesmanListParameters" />
+  <xs:complexType name="SWIService.CopyCPParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.CopyCPParameters" nillable="true" type="tns:SWIService.CopyCPParameters" />
+  <xs:complexType name="SWIService.DeleteCPParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.DeleteCPParameters" nillable="true" type="tns:SWIService.DeleteCPParameters" />
+  <xs:complexType name="SWIService.GetCPHeaderParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPHeaderParameters" nillable="true" type="tns:SWIService.GetCPHeaderParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetCPHeaderParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetCPHeaderParametersRet" nillable="true" type="tns:SWIService.GetCPHeaderParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetCPHeaderParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetCPHeaderParametersRet" />
+  <xs:complexType name="SWIService.GetCPHeaderParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCPCurrencyCode" type="xs:int" />
+      <xs:element minOccurs="0" name="MyCPCustomerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCPCustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCPCustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDocCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyExpirationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPartialShipmentCode" type="xs:int" />
+      <xs:element minOccurs="0" name="MyPaymentCond" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPriceCond" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySalesmanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyScalaCustomerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyScalaCustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyScalaCustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyWHCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPHeaderParametersRet" nillable="true" type="tns:SWIService.GetCPHeaderParametersRet" />
+  <xs:complexType name="SWIService.GetCustomerListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyProductsSearchColumns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+      <xs:element minOccurs="0" name="MySubstring1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySubstring2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCustomerListParameters" nillable="true" type="tns:SWIService.GetCustomerListParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetCPToPrintParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetCPToPrintParametersRet" nillable="true" type="tns:SWIService.GetCPToPrintParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetCPToPrintParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetCPToPrintParametersRet" />
+  <xs:complexType name="SWIService.GetCPToPrintParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyAddStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCPDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyClientAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyClientCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCurrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="MyCurrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDelTime" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDeliveryAddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDeliveryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="MyExpirationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOR21002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOR21005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOR21010_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPartialShipment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPaymentCond" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPriceCond" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyReadyDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySC01002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySalesmanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySalesmanName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr01" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr03" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr05" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr06" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr08" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr09" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyVAT" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPToPrintParametersRet" nillable="true" type="tns:SWIService.GetCPToPrintParametersRet" />
+  <xs:complexType name="SWIService.CPHasStringsParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.CPHasStringsParameters" nillable="true" type="tns:SWIService.CPHasStringsParameters" />
+  <xs:complexType name="SWIService.CheckCPDataParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.CheckCPDataParameters" nillable="true" type="tns:SWIService.CheckCPDataParameters" />
+  <xs:complexType name="SWIService.AddOrderHeaderParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyAgentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCAddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDeliveryAddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDeliveryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDocLayout" type="xs:int" />
+      <xs:element minOccurs="0" name="MyExpirationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyInvCurrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="MyPRCurrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="MyPRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPartialShipment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPaymentCond" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPriceCond" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyReadyDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySalesmanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyWHNum" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.AddOrderHeaderParameters" nillable="true" type="tns:SWIService.AddOrderHeaderParameters" />
+  <xs:complexType name="SWIService.GetProductListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyAvailabilityFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="MyCurrExchangeRate" type="xs:double" />
+      <xs:element minOccurs="0" name="MyGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyProductsSearchColumns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+      <xs:element minOccurs="0" name="MySubstring1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySubstring2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyWHNum" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetProductListParameters" nillable="true" type="tns:SWIService.GetProductListParameters" />
+  <xs:complexType name="SWIService.GetCPProductListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPProductListParameters" nillable="true" type="tns:SWIService.GetCPProductListParameters" />
+  <xs:complexType name="SWIService.GetWHParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetWHParameters" nillable="true" type="tns:SWIService.GetWHParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetWHParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetWHParametersRet" nillable="true" type="tns:SWIService.GetWHParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetWHParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetWHParametersRet" />
+  <xs:complexType name="SWIService.GetWHParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyWHCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyWHName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetWHParametersRet" nillable="true" type="tns:SWIService.GetWHParametersRet" />
+  <xs:complexType name="SWIService.GetCPTotalParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPTotalParameters" nillable="true" type="tns:SWIService.GetCPTotalParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetCPTotalParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetCPTotalParametersRet" nillable="true" type="tns:SWIService.GetCPTotalParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetCPTotalParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetCPTotalParametersRet" />
+  <xs:complexType name="SWIService.GetCPTotalParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCurrExchangeRate" type="xs:double" />
+      <xs:element minOccurs="0" name="MyCurrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDeliverySumm" type="xs:double" />
+      <xs:element minOccurs="0" name="MyMargin" type="xs:double" />
+      <xs:element minOccurs="0" name="MyMarginWithDelivery" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPrimaryCost" type="xs:double" />
+      <xs:element minOccurs="0" name="MySumm" type="xs:double" />
+      <xs:element minOccurs="0" name="MySummWithVAT" type="xs:double" />
+      <xs:element minOccurs="0" name="MySummWithoutDelivery" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPTotalParametersRet" nillable="true" type="tns:SWIService.GetCPTotalParametersRet" />
+  <xs:complexType name="SWIService.GetMarginLevelsParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetMarginLevelsParameters" nillable="true" type="tns:SWIService.GetMarginLevelsParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetMarginLevelsParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetMarginLevelsParametersRet" nillable="true" type="tns:SWIService.GetMarginLevelsParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetMarginLevelsParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetMarginLevelsParametersRet" />
+  <xs:complexType name="SWIService.GetMarginLevelsParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MarginLevelDirector" type="xs:double" />
+      <xs:element minOccurs="0" name="MarginLevelManager" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetMarginLevelsParametersRet" nillable="true" type="tns:SWIService.GetMarginLevelsParametersRet" />
+  <xs:complexType name="SWIService.ReCalcCPParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="MyMargin" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.ReCalcCPParameters" nillable="true" type="tns:SWIService.ReCalcCPParameters" />
+  <xs:complexType name="SWIService.IncreaseCPPerCentParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPerCent" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.IncreaseCPPerCentParameters" nillable="true" type="tns:SWIService.IncreaseCPPerCentParameters" />
+  <xs:complexType name="SWIService.GetSupplierListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyProductsSearchColumns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+      <xs:element minOccurs="0" name="MySubstring1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySubstring2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetSupplierListParameters" nillable="true" type="tns:SWIService.GetSupplierListParameters" />
+  <xs:complexType name="SWIService.DelOrderParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.DelOrderParameters" nillable="true" type="tns:SWIService.DelOrderParameters" />
+  <xs:complexType name="SWIService.SetCPDelCostParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCostUpdateFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="MyDelCost" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.SetCPDelCostParameters" nillable="true" type="tns:SWIService.SetCPDelCostParameters" />
+  <xs:complexType name="SWIService.GetAltProductListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetAltProductListParameters" nillable="true" type="tns:SWIService.GetAltProductListParameters" />
+  <xs:complexType name="SWIService.GetItemDetailListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemDetailListParameters" nillable="true" type="tns:SWIService.GetItemDetailListParameters" />
+  <xs:complexType name="SWIService.GetItemDetailParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemDetailParameters" nillable="true" type="tns:SWIService.GetItemDetailParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetItemDetailParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetItemDetailParametersRet" nillable="true" type="tns:SWIService.GetItemDetailParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetItemDetailParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetItemDetailParametersRet" />
+  <xs:complexType name="SWIService.GetItemDetailParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCurrencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCurrencyValueNow" type="xs:double" />
+      <xs:element minOccurs="0" name="MyCustomTax" type="xs:double" />
+      <xs:element minOccurs="0" name="MyItemCodeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyShippingCost" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemDetailParametersRet" nillable="true" type="tns:SWIService.GetItemDetailParametersRet" />
+  <xs:complexType name="SWIService.GetItemBatchesParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemBatchesParameters" nillable="true" type="tns:SWIService.GetItemBatchesParameters" />
+  <xs:complexType name="SWIService.GetOrderListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyAgentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyFinishDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOrderFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="MyOrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+      <xs:element minOccurs="0" name="MyStartDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetOrderListParameters" nillable="true" type="tns:SWIService.GetOrderListParameters" />
+  <xs:complexType name="SWIService.GetOrderDetailsParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyOrderNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetOrderDetailsParameters" nillable="true" type="tns:SWIService.GetOrderDetailsParameters" />
+  <xs:complexType name="SWIService.GetItemEditParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStrNum" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemEditParameters" nillable="true" type="tns:SWIService.GetItemEditParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetItemEditParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetItemEditParametersRet" nillable="true" type="tns:SWIService.GetItemEditParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetItemEditParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetItemEditParametersRet" />
+  <xs:complexType name="SWIService.GetItemEditParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DelWeekQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyCurrencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCurrencyValue" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="MyFromScala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyIsWHAssort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyLT" type="xs:double" />
+      <xs:element minOccurs="0" name="MyMinOrderQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPriCost" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPriceFromScala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyQTYInPack" type="xs:double" />
+      <xs:element minOccurs="0" name="MySupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySupplierItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySupplierName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyUOMCode" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekQTY" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemEditParametersRet" nillable="true" type="tns:SWIService.GetItemEditParametersRet" />
+  <xs:complexType name="SWIService.SetCPDelTimeParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyDelWeekQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyWeekQTY" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.SetCPDelTimeParameters" nillable="true" type="tns:SWIService.SetCPDelTimeParameters" />
+  <xs:complexType name="SWIService.EditOrderParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCost" type="xs:double" />
+      <xs:element minOccurs="0" name="MyCostIntr" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDelWeekQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDiscount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyEditOrRecalc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyLT" type="xs:double" />
+      <xs:element minOccurs="0" name="MyName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQty" type="xs:double" />
+      <xs:element minOccurs="0" name="MyStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyUnit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.EditOrderParameters" nillable="true" type="tns:SWIService.EditOrderParameters" />
+  <xs:complexType name="SWIService.GetItemParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemParameters" nillable="true" type="tns:SWIService.GetItemParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetItemParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetItemParametersRet" nillable="true" type="tns:SWIService.GetItemParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetItemParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetItemParametersRet" />
+  <xs:complexType name="SWIService.GetItemParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCurrencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCurrencyValue" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDelTime" type="xs:double" />
+      <xs:element minOccurs="0" name="MyIsWHAssort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyLT" type="xs:double" />
+      <xs:element minOccurs="0" name="MyMinOrderQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPriCost" type="xs:double" />
+      <xs:element minOccurs="0" name="MyPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="MyQTYInPack" type="xs:double" />
+      <xs:element minOccurs="0" name="MySupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySupplierItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySupplierName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyUOMCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemParametersRet" nillable="true" type="tns:SWIService.GetItemParametersRet" />
+  <xs:complexType name="SWIService.GetNewStrNumParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetNewStrNumParameters" nillable="true" type="tns:SWIService.GetNewStrNumParameters" />
+  <xs:complexType name="SWIService.GetItemSuppParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MyQTYOnPage" type="xs:int" />
+      <xs:element minOccurs="0" name="MySubstring1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySubstring2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetItemSuppParameters" nillable="true" type="tns:SWIService.GetItemSuppParameters" />
+  <xs:complexType name="SWIService.AddOrderParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCost" type="xs:double" />
+      <xs:element minOccurs="0" name="MyCostIntr" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDelWeekQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="MyName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyQty" type="xs:double" />
+      <xs:element minOccurs="0" name="MyStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyWeekQTY" type="xs:double" />
+      <xs:element minOccurs="0" name="MyWh" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.AddOrderParameters" nillable="true" type="tns:SWIService.AddOrderParameters" />
+  <xs:complexType name="SWIService.GetCPToExcelParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyCPID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetCPToExcelParameters" nillable="true" type="tns:SWIService.GetCPToExcelParameters" />
+  <xs:complexType name="SWIService.ItemInScalaExistOrNoParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.ItemInScalaExistOrNoParameters" nillable="true" type="tns:SWIService.ItemInScalaExistOrNoParameters" />
+  <xs:complexType name="SWIService.ItemSuppInScalaExistOrNoParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemSuppCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.ItemSuppInScalaExistOrNoParameters" nillable="true" type="tns:SWIService.ItemSuppInScalaExistOrNoParameters" />
+  <xs:complexType name="SWIService.GetScalaSICtItemListParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemSuppCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetScalaSICtItemListParameters" nillable="true" type="tns:SWIService.GetScalaSICtItemListParameters" />
+  <xs:complexType name="ArrayOfSWIService.GetScalaSICtItemListParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SWIService.GetScalaSICtItemListParametersRet" nillable="true" type="tns:SWIService.GetScalaSICtItemListParametersRet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSWIService.GetScalaSICtItemListParametersRet" nillable="true" type="tns:ArrayOfSWIService.GetScalaSICtItemListParametersRet" />
+  <xs:complexType name="SWIService.GetScalaSICtItemListParametersRet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySuppCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySuppName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetScalaSICtItemListParametersRet" nillable="true" type="tns:SWIService.GetScalaSICtItemListParametersRet" />
+  <xs:complexType name="SWIService.ImportRowParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyOrderNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="MyQty" type="xs:double" />
+      <xs:element minOccurs="0" name="MyStrNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyUOM" type="xs:int" />
+      <xs:element minOccurs="0" name="MyWeekQTY" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.ImportRowParameters" nillable="true" type="tns:SWIService.ImportRowParameters" />
+  <xs:complexType name="SWIService.GetScalaCodeBySuppCodeParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MyItemSuppCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SWIService.GetScalaCodeBySuppCodeParameters" nillable="true" type="tns:SWIService.GetScalaCodeBySuppCodeParameters" />
+</xs:schema>
